@@ -6,25 +6,25 @@
 Скачайте и установите с официального сайта **Oracle** или **AdoptOpenJDK**.
 - Убедитесь, что **переменная среды** JAVA_HOME настроена.
 - Проверьте **версию** Java:
-``bash
+```bash
 java -version
-``
+```
 2. **Apache Tomcat** версии 9 или выше:
 a) Скачайте Tomcat с официального сайта.
 b) Разархивируйте в удобное место, например: C:\Tomcat (Windows) или /opt/tomcat (Linux).
 v) Проверьте запуск Tomcat, перейдя в http://localhost:8080.
 3. **Maven**:
 Убедитесь, что Maven установлен:
-``bash
+```bash
 mvn -version
-``
+```
 Если Maven не установлен, скачайте его с официального сайта.
 ## 2. Сборка проекта
 Соберите проект с помощью Maven:
 
-``bash
+```bash
 mvn clean package
-``
+```
 В результате сборки в папке target будет создан файл WAR:
 
 target/ToDoListServlets.war
@@ -33,68 +33,68 @@ target/ToDoListServlets.war
 Скопируйте файл ToDoListServlets.war в папку webapps вашего Tomcat.
 
 Пример (Windows):
-``bash
+```bash
 copy target\ToDoListServlets.war C:\Tomcat\webapps\
-``
+```
 Пример (Linux):
-``bash
+```bash
 cp target/ToDoListServlets.war /opt/tomcat/webapps/
-``
+```
 **Перезапустите Tomcat:**
 
 Windows:
-``bash
+```bash
 C:\Tomcat\bin\startup.bat
-``
+```
 Linux:
-``bash
+```bash
 /opt/tomcat/bin/startup.sh
-``
+```
 Проверьте развертывание, открыв в браузере:
 
-``arduino
+```arduino
 http://localhost:8080/ToDoListServlets
-``
+```
 ## 4. Тестирование API
 Используйте инструмент, например, Postman, или curl для тестирования API.
 
 ### 4.1 Добавление задачи (POST /task)
 URL: http://localhost:8080/ToDoListServlets/task
 Запрос (Body):
-``json
+```json
 {
   "owner": "Nikita",
   "description": "Wash the dishes today"
 }
-``
+```
 Ответ:
-``json
+```json
 {
   "id": "8df48b8c-c960-41eb-8c97-43e88b055cf6",
   "owner": "Nikita",
   "description": "Wash the dishes today"
 }
-``
+```
 ### 4.2 Получение задачи по ID (GET /task)
 URL: http://localhost:8080/ToDoListServlets/task?id=<id>
 Ответ:
-``json
+```json
 {
   "id": "8df48b8c-c960-41eb-8c97-43e88b055cf6",
   "owner": "Nikita",
   "description": "Wash the dishes today"
 }
-``
+```
 ### 4.3 Удаление задачи по ID (DELETE /task)
 URL: http://localhost:8080/ToDoListServlets/task?id=<id>
 Ответ:
-``json
+```json
 {
   "id": "8df48b8c-c960-41eb-8c97-43e88b055cf6",
   "owner": "Nikita",
   "description": "Wash the dishes today"
 }
-``
+```
 ## 5. Решение возможных проблем
 ### Tomcat не запускается:
 
@@ -109,11 +109,11 @@ URL: http://localhost:8080/ToDoListServlets/task?id=<id>
 Убедитесь, что вы обращаетесь по правильному пути: http://localhost:8080/ToDoListServlets/task.
 ## 6. Дополнительные команды
 Для перезапуска Tomcat:
-``bash
+```bash
 shutdown.sh && startup.sh
-``
+```
 Для пересборки проекта:
-``bash
+```bash
 mvn clean package
-``
+```
 Теперь ваше приложение готово к использованию!
