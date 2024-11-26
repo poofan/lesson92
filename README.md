@@ -1,4 +1,4 @@
-# Инструкция по запуску приложения ToDoListServlets
+# Инструкция по запуску приложения homework092
 ## 1. Предварительные требования
 Перед запуском убедитесь, что на вашем компьютере установлено следующее:
 
@@ -27,18 +27,18 @@ mvn clean package
 ```
 В результате сборки в папке target будет создан файл WAR:
 
-target/ToDoListServlets.war
+target/homework092.war
 
 ## 3. Деплой на Apache Tomcat
-Скопируйте файл ToDoListServlets.war в папку webapps вашего Tomcat.
+Скопируйте файл homework092.war в папку webapps вашего Tomcat.
 
 Пример (Windows):
 ```bash
-copy target\ToDoListServlets.war C:\Tomcat\webapps\
+copy target\homework092.war C:\Tomcat\webapps\
 ```
 Пример (Linux):
 ```bash
-cp target/ToDoListServlets.war /opt/tomcat/webapps/
+cp target/homework092.war /opt/tomcat/webapps/
 ```
 **Перезапустите Tomcat:**
 
@@ -53,13 +53,13 @@ Linux:
 Проверьте развертывание, открыв в браузере:
 
 ```arduino
-http://localhost:8080/ToDoListServlets
+http://localhost:8080/homework092
 ```
 ## 4. Тестирование API
 Используйте инструмент, например, Postman, или curl для тестирования API.
 
 ### 4.1 Добавление задачи (POST /task)
-URL: http://localhost:8080/ToDoListServlets/task
+URL: http://localhost:8080/homework092/task
 Запрос (Body):
 ```json
 {
@@ -76,7 +76,7 @@ URL: http://localhost:8080/ToDoListServlets/task
 }
 ```
 ### 4.2 Получение задачи по ID (GET /task)
-URL: http://localhost:8080/ToDoListServlets/task?id=<id>
+URL: http://localhost:8080/homework092/task?id=<id>
 Ответ:
 ```json
 {
@@ -86,7 +86,7 @@ URL: http://localhost:8080/ToDoListServlets/task?id=<id>
 }
 ```
 ### 4.3 Удаление задачи по ID (DELETE /task)
-URL: http://localhost:8080/ToDoListServlets/task?id=<id>
+URL: http://localhost:8080/homework092/task?id=<id>
 Ответ:
 ```json
 {
@@ -106,7 +106,7 @@ URL: http://localhost:8080/ToDoListServlets/task?id=<id>
 2) Убедитесь, что структура проекта соответствует требованиям Maven.
 ### Ошибка 404 при обращении к сервлету:
 
-Убедитесь, что вы обращаетесь по правильному пути: http://localhost:8080/ToDoListServlets/task.
+Убедитесь, что вы обращаетесь по правильному пути: http://localhost:8080/homework092/task.
 ## 6. Дополнительные команды
 Для перезапуска Tomcat:
 ```bash
