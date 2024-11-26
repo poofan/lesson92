@@ -88,13 +88,13 @@ URL: http://localhost:8080/ToDoListServlets/task?id=<id>
 ### 4.3 Удаление задачи по ID (DELETE /task)
 URL: http://localhost:8080/ToDoListServlets/task?id=<id>
 Ответ:
-```json
+``json
 {
   "id": "8df48b8c-c960-41eb-8c97-43e88b055cf6",
   "owner": "Nikita",
   "description": "Wash the dishes today"
 }
-```
+``
 ## 5. Решение возможных проблем
 ### Tomcat не запускается:
 
